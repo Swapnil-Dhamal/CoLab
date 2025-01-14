@@ -13,8 +13,9 @@ import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
-@Data
+
 @Entity
+@Data
 @Table(name = "users", indexes = {
         @Index(name = "idx_email", columnList = "email", unique = true),
         @Index(name = "idx_role", columnList = "role")
@@ -32,6 +33,9 @@ public class Users {
     @NotNull
     @Column(unique = true, nullable = false)
     private String email;
+
+    @Column(nullable = false)
+    private String password;
 
     @Enumerated(EnumType.STRING)
     @NotNull
@@ -54,12 +58,13 @@ public class Users {
     private Instant updatedAt;
 
 
+
 }
 
 class Availability{
     private String status;
     private String reason;
-    private String from;
-    private String to;
+    private String startTime;
+    private String endTime;
 
 }
