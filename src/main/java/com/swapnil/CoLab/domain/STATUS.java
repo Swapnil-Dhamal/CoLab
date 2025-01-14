@@ -1,8 +1,9 @@
 package com.swapnil.CoLab.domain;
 
 public enum STATUS {
-
-    ACTIVE,
+    PENDING,
+    IN_PROGRESS,
     COMPLETED,
-    ON_HOLD
+    ON_HOLD,
+    CANCELLED
 }
