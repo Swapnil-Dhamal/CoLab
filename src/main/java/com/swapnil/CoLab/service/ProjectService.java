@@ -2,6 +2,7 @@ package com.swapnil.CoLab.service;
 
 import com.swapnil.CoLab.dto.ProjectDTO;
 import com.swapnil.CoLab.model.Project;
+import com.swapnil.CoLab.model.Users;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,6 +14,8 @@ public interface ProjectService {
 
     public Project findById(Long projectId);
 
+    public Users findProjectManager(Long projectId);
+
     public List<Project> findAll();
 
     public Project updateProject(Long projectId, ProjectDTO projectDTO);
@@ -21,6 +24,6 @@ public interface ProjectService {
 
     public List<Project> getProjectsByStatus(String status);
 
-    public void deleteProject(Long projectId);
+    public void deleteProject(Long projectId) throws Exception;
 
 }
